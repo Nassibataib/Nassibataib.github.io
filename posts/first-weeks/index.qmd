@@ -1,0 +1,12 @@
+---
+title: "My first weeks in MDS"
+author: "Nassiba Taib"
+date: 2026-09-09
+---
+Starting the MDS program at UBC has been both exciting and challenging. During orientation, I was excited to meet my classmates and learn more about the program, but I also felt a little overwhelmed by how fast-paced everything seemed. Coming from a life sciences background, I knew that learning programming and new technical tools would be a big part of this journey.
+
+The first weeks of classes have introduced me to Python, R, statistics, and many new tools and concepts. One thing that surprised me most was the pace of the program. There is a lot to learn in a short amount of time, and some of the labs have been challenging, but each time I work through a problem I feel that I am making progress.
+
+I am still adjusting to the intensity of the program, but I am becoming more comfortable with the material every day. I know there will be many challenges ahead, but I am excited to continue developing my skills and see how much I can learn throughout the MDS program.
+
+![Orientation day on campus.](orientation.jpg)

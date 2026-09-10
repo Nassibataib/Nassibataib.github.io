@@ -1,5 +1,15 @@
 ---
-title: "About"
+title: "About me"
 ---
 
-About this site
+## Background
+
+I have a background in biological sciences, with a master's degree in immunology. Before joining the MDS program, I worked in biomedical research, where I gained experience working with scientific data and contributing to research projects.
+
+## Why Data Science
+
+My experience in research sparked my interest in using data to answer scientific and healthcare questions. I joined the MDS program at UBC to develop my skills in programming, statistics, and data analysis. My goal is to combine my background in life sciences with data science and explore opportunities in healthcare and biomedical research.
+
+## Outside of Data Science
+
+Outside of studying and data science, I enjoy spending time with my family, exploring new places, baking, and cooking. I especially enjoy trying new recipes and sharing food with family and friends.

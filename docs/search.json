@@ -2,15 +2,50 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About me",
     "section": "",
-    "text": "About this site"
+    "text": "I have a background in biological sciences, with a master’s degree in immunology. Before joining the MDS program, I worked in biomedical research, where I gained experience working with scientific data and contributing to research projects."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Nassiba Taib",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "I have a background in biological sciences and biomedical research. Before joining the MDS program at UBC, I worked in research and developed a strong interest in working with scientific data. I chose data science because I want to build stronger skills in programming, statistics, and data analysis. In the future, I hope to combine my life sciences background with data science in healthcare or biomedical research."
+  },
+  {
+    "objectID": "posts/first-weeks/index.html",
+    "href": "posts/first-weeks/index.html",
+    "title": "My first weeks in MDS",
+    "section": "",
+    "text": "Starting the MDS program at UBC has been both exciting and challenging. During orientation, I was excited to meet my classmates and learn more about the program, but I also felt a little overwhelmed by how fast-paced everything seemed. Coming from a life sciences background, I knew that learning programming and new technical tools would be a big part of this journey.\nThe first weeks of classes have introduced me to Python, R, statistics, and many new tools and concepts. One thing that surprised me most was the pace of the program. There is a lot to learn in a short amount of time, and some of the labs have been challenging, but each time I work through a problem I feel that I am making progress.\nI am still adjusting to the intensity of the program, but I am becoming more comfortable with the material every day. I know there will be many challenges ahead, but I am excited to continue developing my skills and see how much I can learn throughout the MDS program.\n\n\n\nOrientation day on campus."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 9, 2026\n\n\nNassiba Taib\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html#background",
+    "href": "about.html#background",
+    "title": "About me",
+    "section": "",
+    "text": "I have a background in biological sciences, with a master’s degree in immunology. Before joining the MDS program, I worked in biomedical research, where I gained experience working with scientific data and contributing to research projects."
+  },
+  {
+    "objectID": "about.html#why-data-science",
+    "href": "about.html#why-data-science",
+    "title": "About me",
+    "section": "Why Data Science",
+    "text": "Why Data Science\nMy experience in research sparked my interest in using data to answer scientific and healthcare questions. I joined the MDS program at UBC to develop my skills in programming, statistics, and data analysis. My goal is to combine my background in life sciences with data science and explore opportunities in healthcare and biomedical research."
+  },
+  {
+    "objectID": "about.html#outside-of-data-science",
+    "href": "about.html#outside-of-data-science",
+    "title": "About me",
+    "section": "Outside of Data Science",
+    "text": "Outside of Data Science\nOutside of studying and data science, I enjoy spending time with my family, exploring new places, baking, and cooking. I especially enjoy trying new recipes and sharing food with family and friends."
   }
 ]
