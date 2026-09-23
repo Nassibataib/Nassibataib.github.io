@@ -1,0 +1,66 @@
+---
+title: "Palmer Penguins with R and Python"
+author: "Nassiba Taib"
+date: "2026-09-23"
+---
+
+## Introduction
+
+In this post, I use both R and Python to explore the Palmer Penguins dataset. I will prepare the data in R and then use Python to summarize and visualize the results.
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/), Palmer Station Antarctica LTER.
+
+## Prepare the data in R
+
+```{r}
+#| message: false
+#| warning: false
+
+library(palmerpenguins)
+library(dplyr)
+
+penguins_r <- penguins |>
+  select(species, body_mass_g) |>
+  filter(!is.na(body_mass_g))
+
+penguins_r
+```
+
+## Analyze the R data with Python
+
+```{python}
+import pandas as pd
+
+penguins_python = r.penguins_r
+
+average_mass = (
+    penguins_python
+    .groupby("species", as_index=False)["body_mass_g"]
+    .mean()
+)
+
+average_mass
+```
+
+## Visualize the result in Python
+
+```{python}
+#| label: fig-r-python-mass
+#| fig-cap: "Average penguin body mass calculated from data prepared in R and visualized in Python."
+
+import matplotlib.pyplot as plt
+
+plt.bar(
+    average_mass["species"],
+    average_mass["body_mass_g"]
+)
+
+plt.xlabel("Species")
+plt.ylabel("Average body mass (g)")
+plt.show()
+```
+
+## Findings
+
+The data were first prepared in R and then passed to Python for further analysis. Python calculated the average body mass for each species and created the visualization. Gentoo penguins had the highest average body mass.
+

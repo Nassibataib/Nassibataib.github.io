@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Penguin Data Analysis with Python\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nNassiba Taib\n\n\n\n\n\n\n\n\n\n\n\n\nPenguin Body Mass Analysis\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nNassiba Taib\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 9, 2026\n\n\nNassiba Taib\n\n\n\n\n\nNo matching items"
+    "text": "Palmer Penguins with R and Python\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nNassiba Taib\n\n\n\n\n\n\n\n\n\n\n\n\nPenguin Data Analysis with Python\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nNassiba Taib\n\n\n\n\n\n\n\n\n\n\n\n\nPenguin Body Mass Analysis\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nNassiba Taib\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 9, 2026\n\n\nNassiba Taib\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -131,5 +131,47 @@
     "title": "About me",
     "section": "Outside of Data Science",
     "text": "Outside of Data Science\nOutside of studying and data science, I enjoy spending time with my family, exploring new places, baking, and cooking. I especially enjoy trying new recipes and sharing food with family and friends."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html",
+    "href": "posts/r-and-python/index.html",
+    "title": "Palmer Penguins with R and Python",
+    "section": "",
+    "text": "In this post, I use both R and Python to explore the Palmer Penguins dataset. I will prepare the data in R and then use Python to summarize and visualize the results.\nData: Palmer Penguins, Palmer Station Antarctica LTER."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#introduction",
+    "href": "posts/r-and-python/index.html#introduction",
+    "title": "Palmer Penguins with R and Python",
+    "section": "",
+    "text": "In this post, I use both R and Python to explore the Palmer Penguins dataset. I will prepare the data in R and then use Python to summarize and visualize the results.\nData: Palmer Penguins, Palmer Station Antarctica LTER."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#prepare-the-data-in-r",
+    "href": "posts/r-and-python/index.html#prepare-the-data-in-r",
+    "title": "Palmer Penguins with R and Python",
+    "section": "Prepare the data in R",
+    "text": "Prepare the data in R\n\nlibrary(palmerpenguins)\nlibrary(dplyr)\n\npenguins_r &lt;- penguins |&gt;\n  select(species, body_mass_g) |&gt;\n  filter(!is.na(body_mass_g))\n\npenguins_r\n\n# A tibble: 342 × 2\n   species body_mass_g\n   &lt;fct&gt;         &lt;int&gt;\n 1 Adelie         3750\n 2 Adelie         3800\n 3 Adelie         3250\n 4 Adelie         3450\n 5 Adelie         3650\n 6 Adelie         3625\n 7 Adelie         4675\n 8 Adelie         3475\n 9 Adelie         4250\n10 Adelie         3300\n# ℹ 332 more rows"
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#analyze-the-r-data-with-python",
+    "href": "posts/r-and-python/index.html#analyze-the-r-data-with-python",
+    "title": "Palmer Penguins with R and Python",
+    "section": "Analyze the R data with Python",
+    "text": "Analyze the R data with Python\n\nimport pandas as pd\n\npenguins_python = r.penguins_r\n\naverage_mass = (\n    penguins_python\n    .groupby(\"species\", as_index=False)[\"body_mass_g\"]\n    .mean()\n)\n\naverage_mass\n\n     species  body_mass_g\n0     Adelie  3700.662252\n1  Chinstrap  3733.088235\n2     Gentoo  5076.016260"
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#visualize-the-result-in-python",
+    "href": "posts/r-and-python/index.html#visualize-the-result-in-python",
+    "title": "Palmer Penguins with R and Python",
+    "section": "Visualize the result in Python",
+    "text": "Visualize the result in Python\n\nimport matplotlib.pyplot as plt\n\nplt.bar(\n    average_mass[\"species\"],\n    average_mass[\"body_mass_g\"]\n)\n\nplt.xlabel(\"Species\")\nplt.ylabel(\"Average body mass (g)\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Average penguin body mass calculated from data prepared in R and visualized in Python."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#findings",
+    "href": "posts/r-and-python/index.html#findings",
+    "title": "Palmer Penguins with R and Python",
+    "section": "Findings",
+    "text": "Findings\nThe data were first prepared in R and then passed to Python for further analysis. Python calculated the average body mass for each species and created the visualization. Gentoo penguins had the highest average body mass."
   }
 ]
