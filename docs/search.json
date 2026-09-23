@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Penguin Body Mass Analysis\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nNassiba Taib\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 9, 2026\n\n\nNassiba Taib\n\n\n\n\n\nNo matching items"
+    "text": "Penguin Data Analysis with Python\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\nNassiba Taib\n\n\n\n\n\n\n\n\n\n\n\n\nPenguin Body Mass Analysis\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nNassiba Taib\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 9, 2026\n\n\nNassiba Taib\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -12,13 +12,6 @@
     "title": "Nassiba Taib",
     "section": "",
     "text": "I have a background in biological sciences and biomedical research. Before joining the MDS program at UBC, I worked in research and developed a strong interest in working with scientific data. I chose data science because I want to build stronger skills in programming, statistics, and data analysis. In the future, I hope to combine my life sciences background with data science in healthcare or biomedical research."
-  },
-  {
-    "objectID": "posts/first-weeks/index.html",
-    "href": "posts/first-weeks/index.html",
-    "title": "My first weeks in MDS",
-    "section": "",
-    "text": "Starting the MDS program at UBC has been both exciting and challenging. During orientation, I was excited to meet my classmates and learn more about the program, but I also felt a little overwhelmed by how fast-paced everything seemed. Coming from a life sciences background, I knew that learning programming and new technical tools would be a big part of this journey.\nThe first weeks of classes have introduced me to Python, R, statistics, and many new tools and concepts. One thing that surprised me most was the pace of the program. There is a lot to learn in a short amount of time, and some of the labs have been challenging, but each time I work through a problem I feel that I am making progress.\nI am still adjusting to the intensity of the program, but I am becoming more comfortable with the material every day. I know there will be many challenges ahead, but I am excited to continue developing my skills and see how much I can learn throughout the MDS program.\n\n\n\nOrientation day on campus."
   },
   {
     "objectID": "posts/penguins-r/index.html",
@@ -68,6 +61,55 @@
     "title": "Penguin Body Mass Analysis",
     "section": "Findings",
     "text": "Findings\nThe results show differences in body mass among the three penguin species. Gentoo penguins have a higher average body mass than Adelie and Chinstrap penguins. The boxplot also shows the distribution of body mass within each species."
+  },
+  {
+    "objectID": "posts/first-weeks/index.html",
+    "href": "posts/first-weeks/index.html",
+    "title": "My first weeks in MDS",
+    "section": "",
+    "text": "Starting the MDS program at UBC has been both exciting and challenging. During orientation, I was excited to meet my classmates and learn more about the program, but I also felt a little overwhelmed by how fast-paced everything seemed. Coming from a life sciences background, I knew that learning programming and new technical tools would be a big part of this journey.\nThe first weeks of classes have introduced me to Python, R, statistics, and many new tools and concepts. One thing that surprised me most was the pace of the program. There is a lot to learn in a short amount of time, and some of the labs have been challenging, but each time I work through a problem I feel that I am making progress.\nI am still adjusting to the intensity of the program, but I am becoming more comfortable with the material every day. I know there will be many challenges ahead, but I am excited to continue developing my skills and see how much I can learn throughout the MDS program.\n\n\n\nOrientation day on campus."
+  },
+  {
+    "objectID": "posts/penguins-python/index.html",
+    "href": "posts/penguins-python/index.html",
+    "title": "Penguin Data Analysis with Python",
+    "section": "",
+    "text": "In this post, I will use Python to explore the Palmer Penguins dataset and compare penguin measurements among the three species.\nData: Palmer Penguins, Palmer Station Antarctica LTER."
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#introduction",
+    "href": "posts/penguins-python/index.html#introduction",
+    "title": "Penguin Data Analysis with Python",
+    "section": "",
+    "text": "In this post, I will use Python to explore the Palmer Penguins dataset and compare penguin measurements among the three species.\nData: Palmer Penguins, Palmer Station Antarctica LTER."
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#exploring-the-data",
+    "href": "posts/penguins-python/index.html#exploring-the-data",
+    "title": "Penguin Data Analysis with Python",
+    "section": "Exploring the data",
+    "text": "Exploring the data\n\nfrom palmerpenguins import load_penguins\nimport pandas as pd\n\npenguins = load_penguins()\n\npenguins_clean = penguins[[\"species\", \"body_mass_g\"]].dropna()\n\npenguins_clean\n\n\n\n\n\n\n\n\nspecies\nbody_mass_g\n\n\n\n\n0\nAdelie\n3750.0\n\n\n1\nAdelie\n3800.0\n\n\n2\nAdelie\n3250.0\n\n\n4\nAdelie\n3450.0\n\n\n5\nAdelie\n3650.0\n\n\n...\n...\n...\n\n\n339\nChinstrap\n4000.0\n\n\n340\nChinstrap\n3400.0\n\n\n341\nChinstrap\n3775.0\n\n\n342\nChinstrap\n4100.0\n\n\n343\nChinstrap\n3775.0\n\n\n\n\n342 rows × 2 columns"
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#average-body-mass-by-species",
+    "href": "posts/penguins-python/index.html#average-body-mass-by-species",
+    "title": "Penguin Data Analysis with Python",
+    "section": "Average body mass by species",
+    "text": "Average body mass by species\n\naverage_mass = (\n    penguins_clean\n    .groupby(\"species\", as_index=False)\n    [\"body_mass_g\"]\n    .mean()\n)\n\naverage_mass\n\n\n\n\n\n\n\n\nspecies\nbody_mass_g\n\n\n\n\n0\nAdelie\n3700.662252\n\n\n1\nChinstrap\n3733.088235\n\n\n2\nGentoo\n5076.016260"
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#body-mass-comparison",
+    "href": "posts/penguins-python/index.html#body-mass-comparison",
+    "title": "Penguin Data Analysis with Python",
+    "section": "Body mass comparison",
+    "text": "Body mass comparison\n\nimport matplotlib.pyplot as plt\n\nplt.bar(\n    average_mass[\"species\"],\n    average_mass[\"body_mass_g\"]\n)\n\nplt.xlabel(\"Species\")\nplt.ylabel(\"Average body mass (g)\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Average body mass of Palmer Penguins by species."
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#findings",
+    "href": "posts/penguins-python/index.html#findings",
+    "title": "Penguin Data Analysis with Python",
+    "section": "Findings",
+    "text": "Findings\nThe results show that Gentoo penguins have the highest average body mass. Adelie and Chinstrap penguins have similar average body masses, while Gentoo penguins are noticeably heavier."
   },
   {
     "objectID": "about.html",

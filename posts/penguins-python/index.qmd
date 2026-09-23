@@ -1,0 +1,63 @@
+---
+title: "Penguin Data Analysis with Python"
+author: "Nassiba Taib"
+date: "2026-09-23"
+---
+
+## Introduction
+
+In this post, I will use Python to explore the Palmer Penguins dataset and compare penguin measurements among the three species.
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/), Palmer Station Antarctica LTER.
+
+
+## Exploring the data
+
+```{python}
+from palmerpenguins import load_penguins
+import pandas as pd
+
+penguins = load_penguins()
+
+penguins_clean = penguins[["species", "body_mass_g"]].dropna()
+
+penguins_clean
+```
+
+## Average body mass by species
+
+```{python}
+average_mass = (
+    penguins_clean
+    .groupby("species", as_index=False)
+    ["body_mass_g"]
+    .mean()
+)
+
+average_mass
+```
+
+## Body mass comparison
+
+```{python}
+#| label: fig-python-body-mass
+#| fig-cap: "Average body mass of Palmer Penguins by species."
+
+import matplotlib.pyplot as plt
+
+plt.bar(
+    average_mass["species"],
+    average_mass["body_mass_g"]
+)
+
+plt.xlabel("Species")
+plt.ylabel("Average body mass (g)")
+plt.show()
+```
+
+## Findings
+
+The results show that Gentoo penguins have the highest average body mass. Adelie and Chinstrap penguins have similar average body masses, while Gentoo penguins are noticeably heavier.
+
+
+
