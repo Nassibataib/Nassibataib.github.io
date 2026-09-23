@@ -10,23 +10,12 @@ In this post, I will explore the Palmer Penguins dataset and compare body mass a
 Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/), Palmer Station Antarctica LTER.
 
 
+
 ## Exploring the data
 
-```{r}
+```{r} 
 #| message: false
 #| warning: false
-
-library(palmerpenguins)
-library(dplyr)
-library(ggplot2)
-
-penguins
-```
-
-
-## Exploring the data
-
-```{r}
 library(palmerpenguins)
 library(dplyr)
 library(ggplot2)

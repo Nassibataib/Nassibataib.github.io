@@ -32,13 +32,6 @@
     "href": "posts/penguins-r/index.html#exploring-the-data",
     "title": "Penguin Body Mass Analysis",
     "section": "Exploring the data",
-    "text": "Exploring the data\n\nlibrary(palmerpenguins)\nlibrary(dplyr)\nlibrary(ggplot2)\n\npenguins\n\n# A tibble: 344 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
-  },
-  {
-    "objectID": "posts/penguins-r/index.html#exploring-the-data-1",
-    "href": "posts/penguins-r/index.html#exploring-the-data-1",
-    "title": "Penguin Body Mass Analysis",
-    "section": "Exploring the data",
     "text": "Exploring the data\n\nlibrary(palmerpenguins)\nlibrary(dplyr)\nlibrary(ggplot2)\n\npenguins_clean &lt;- penguins |&gt;\n  select(species, body_mass_g) |&gt;\n  filter(!is.na(body_mass_g))\n\npenguins_clean\n\n# A tibble: 342 × 2\n   species body_mass_g\n   &lt;fct&gt;         &lt;int&gt;\n 1 Adelie         3750\n 2 Adelie         3800\n 3 Adelie         3250\n 4 Adelie         3450\n 5 Adelie         3650\n 6 Adelie         3625\n 7 Adelie         4675\n 8 Adelie         3475\n 9 Adelie         4250\n10 Adelie         3300\n# ℹ 332 more rows"
   },
   {
