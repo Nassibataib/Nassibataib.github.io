@@ -1,0 +1,70 @@
+---
+title: "Penguin Body Mass Analysis"
+author: "Nassiba Taib"
+date: "2026-09-21"
+---
+## Introduction
+
+In this post, I will explore the Palmer Penguins dataset and compare body mass among the three penguin species.
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/), Palmer Station Antarctica LTER.
+
+
+## Exploring the data
+
+```{r}
+#| message: false
+#| warning: false
+
+library(palmerpenguins)
+library(dplyr)
+library(ggplot2)
+
+penguins
+```
+
+
+## Exploring the data
+
+```{r}
+library(palmerpenguins)
+library(dplyr)
+library(ggplot2)
+
+penguins_clean <- penguins |>
+  select(species, body_mass_g) |>
+  filter(!is.na(body_mass_g))
+
+penguins_clean
+```
+
+
+## Average body mass by species
+
+```{r}
+average_mass <- penguins_clean |>
+  group_by(species) |>
+  summarise(mean_body_mass_g = mean(body_mass_g))
+
+average_mass
+```
+
+
+## Body mass comparison
+
+```{r}
+#| label: fig-body-mass
+#| fig-cap: "Body mass distribution of Palmer Penguins by species."
+
+ggplot(penguins_clean, aes(x = species, y = body_mass_g)) +
+  geom_boxplot() +
+  labs(
+    x = "Species",
+    y = "Body mass (g)"
+  )
+```
+
+## Findings
+
+The results show differences in body mass among the three penguin species. Gentoo penguins have a higher average body mass than Adelie and Chinstrap penguins. The boxplot also shows the distribution of body mass within each species.
+

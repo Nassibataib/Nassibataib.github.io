@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 9, 2026\n\n\nNassiba Taib\n\n\n\n\n\nNo matching items"
+    "text": "Penguin Body Mass Analysis\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\nNassiba Taib\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 9, 2026\n\n\nNassiba Taib\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -19,6 +19,55 @@
     "title": "My first weeks in MDS",
     "section": "",
     "text": "Starting the MDS program at UBC has been both exciting and challenging. During orientation, I was excited to meet my classmates and learn more about the program, but I also felt a little overwhelmed by how fast-paced everything seemed. Coming from a life sciences background, I knew that learning programming and new technical tools would be a big part of this journey.\nThe first weeks of classes have introduced me to Python, R, statistics, and many new tools and concepts. One thing that surprised me most was the pace of the program. There is a lot to learn in a short amount of time, and some of the labs have been challenging, but each time I work through a problem I feel that I am making progress.\nI am still adjusting to the intensity of the program, but I am becoming more comfortable with the material every day. I know there will be many challenges ahead, but I am excited to continue developing my skills and see how much I can learn throughout the MDS program.\n\n\n\nOrientation day on campus."
+  },
+  {
+    "objectID": "posts/penguins-r/index.html",
+    "href": "posts/penguins-r/index.html",
+    "title": "Penguin Body Mass Analysis",
+    "section": "",
+    "text": "In this post, I will explore the Palmer Penguins dataset and compare body mass among the three penguin species.\nData: Palmer Penguins, Palmer Station Antarctica LTER."
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#introduction",
+    "href": "posts/penguins-r/index.html#introduction",
+    "title": "Penguin Body Mass Analysis",
+    "section": "",
+    "text": "In this post, I will explore the Palmer Penguins dataset and compare body mass among the three penguin species.\nData: Palmer Penguins, Palmer Station Antarctica LTER."
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#exploring-the-data",
+    "href": "posts/penguins-r/index.html#exploring-the-data",
+    "title": "Penguin Body Mass Analysis",
+    "section": "Exploring the data",
+    "text": "Exploring the data\n\nlibrary(palmerpenguins)\nlibrary(dplyr)\nlibrary(ggplot2)\n\npenguins\n\n# A tibble: 344 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#exploring-the-data-1",
+    "href": "posts/penguins-r/index.html#exploring-the-data-1",
+    "title": "Penguin Body Mass Analysis",
+    "section": "Exploring the data",
+    "text": "Exploring the data\n\nlibrary(palmerpenguins)\nlibrary(dplyr)\nlibrary(ggplot2)\n\npenguins_clean &lt;- penguins |&gt;\n  select(species, body_mass_g) |&gt;\n  filter(!is.na(body_mass_g))\n\npenguins_clean\n\n# A tibble: 342 × 2\n   species body_mass_g\n   &lt;fct&gt;         &lt;int&gt;\n 1 Adelie         3750\n 2 Adelie         3800\n 3 Adelie         3250\n 4 Adelie         3450\n 5 Adelie         3650\n 6 Adelie         3625\n 7 Adelie         4675\n 8 Adelie         3475\n 9 Adelie         4250\n10 Adelie         3300\n# ℹ 332 more rows"
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#average-body-mass-by-species",
+    "href": "posts/penguins-r/index.html#average-body-mass-by-species",
+    "title": "Penguin Body Mass Analysis",
+    "section": "Average body mass by species",
+    "text": "Average body mass by species\n\naverage_mass &lt;- penguins_clean |&gt;\n  group_by(species) |&gt;\n  summarise(mean_body_mass_g = mean(body_mass_g))\n\naverage_mass\n\n# A tibble: 3 × 2\n  species   mean_body_mass_g\n  &lt;fct&gt;                &lt;dbl&gt;\n1 Adelie               3701.\n2 Chinstrap            3733.\n3 Gentoo               5076."
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#body-mass-comparison",
+    "href": "posts/penguins-r/index.html#body-mass-comparison",
+    "title": "Penguin Body Mass Analysis",
+    "section": "Body mass comparison",
+    "text": "Body mass comparison\n\nggplot(penguins_clean, aes(x = species, y = body_mass_g)) +\n  geom_boxplot() +\n  labs(\n    x = \"Species\",\n    y = \"Body mass (g)\"\n  )\n\n\n\n\n\n\n\nFigure 1: Body mass distribution of Palmer Penguins by species."
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#findings",
+    "href": "posts/penguins-r/index.html#findings",
+    "title": "Penguin Body Mass Analysis",
+    "section": "Findings",
+    "text": "Findings\nThe results show differences in body mass among the three penguin species. Gentoo penguins have a higher average body mass than Adelie and Chinstrap penguins. The boxplot also shows the distribution of body mass within each species."
   },
   {
     "objectID": "about.html",
